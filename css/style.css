@@ -14,7 +14,6 @@
 }
 
 body.dark-theme {
-  --main-color: blue;
   --title-color: #eff3f5;
   --text-color: #c8cdd0;
   --light-text-color: #a0a7ac;
@@ -37,6 +36,7 @@ body.dark-theme {
 html {
   font-size: 18px;
   font-family: var(--font-family);
+  text-wrap: balance;
 }
 
 body {
@@ -79,16 +79,33 @@ a {
   }
 }
 
+button {
+  background-color: var(--main-color);
+  color: white;
+  border: 0.088rem solid var(--main-color);
+  border-radius: 100vw;
+  padding: 0.6rem 1rem;
+
+  &:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+    color: white;
+    cursor: pointer;
+  }
+}
+
 /* <HEADER  */
 header {
+  /* background-color: lightcoral; */
+  background-color: var(--container-color);
   grid-area: header;
-  background-color: lightcoral;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--pg);
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--container-shadow);
+  background-color: var();
 
   nav {
     display: flex;
@@ -120,19 +137,85 @@ nav button::before {
 
 /* <MAIN */
 main {
-  background-color: bisque;
+  /* background-color: bisque; */
   grid-area: main;
   padding: var(--pg);
   width: 100dvw;
 }
 
 textarea {
-    width: 100%;
-    margin: 1.4rem auto;
-    resize: none;
-    border: none;
-    border-radius: 8px;
-    padding: 0.8rem;
-    background-color: var(--container-color);
+  width: 100%;
+  margin: 1.4rem auto;
+  resize: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem;
+  background-color: var(--container-color);
+  box-shadow: var(--container-shadow);
+  color: inherit;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: end;
+  gap: 1.2rem;
+
+  button {
+    &:nth-child(1) {
+      background-color: transparent;
+      color: var(--main-color);
+      &:hover {
+        background-color: var(--hover-color);
+        color: white;
+      }
+    }
+  }
 }
 /* </MAIN */
+
+/* <SECTION */
+section {
+  grid-area: section;
+  padding: var(--pg);
+  min-height: 300px;
+}
+
+section > div {
+  background-color: var(--container-color);
+  height: 100%;
+  padding: var(--pg);
+  border-radius: 8px;
+}
+
+.content-a > div {
+  display: grid;
+  place-content: center;
+  text-align: center;
+
+  .bi-exclamation-octagon-fill {
+    color: white;
+    background-color: red;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 100vw;
+    outline: 0.375rem solid rgba(255, 0, 0, 0.288);
+    padding: 0.4rem 0.7rem;
+    font-size: xx-large;
+    margin-bottom: 2rem;
+  }
+}
+
+.content-b > div {
+  .mensaje-encriptado-content {
+    background-color: var(--border-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem auto;
+  }
+
+  .copy-btn-content {
+    display: flex;
+    justify-content: end;
+  }
+}
+/* </SECTION */
