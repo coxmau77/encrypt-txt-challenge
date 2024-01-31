@@ -37,6 +37,7 @@ html {
   font-size: 18px;
   font-family: var(--font-family);
   text-wrap: balance;
+  background-color: pink;
 }
 
 body {
@@ -46,6 +47,7 @@ body {
   display: flex;
   font-size: medium;
   flex-direction: column;
+  margin-bottom: 6rem;
 }
 
 h1,
@@ -92,6 +94,10 @@ button {
     color: white;
     cursor: pointer;
   }
+}
+
+.hide-content {
+  display: none;
 }
 
 /* <HEADER  */
@@ -219,3 +225,24 @@ section > div {
   }
 }
 /* </SECTION */
+
+/* <FOOTER */
+footer {
+  padding: var(--pg);
+  border-top: 1px var(--border-color) solid;
+  text-align: center;
+  grid-area: footer;
+  background-color: var(--container-color);
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: .5rem;
+  }
+}
+/* </FOOTER */
