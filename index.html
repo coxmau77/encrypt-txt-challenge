@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt txt challenge</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>txt</h1>
+            <small>Encrypt challenge</small>
+        </div>
+        <nav>
+            <select id="version">
+                <option value="0.0.1">0.0.1</option>
+            </select>
+            <button class="change-theme-button" id="theme-button"></button>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h2>Encypt txt challenge</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            <p>Solo letras minúsculas, sin acentos, sin caracteres especiales y  no puede estar vacío.</p>
+            <textarea type="text" id="input_txt" class="input-txt" placeholder="Ingresar texto" autofocus></textarea>
+        </div>
+        <div class="btn-group">
+            <button>
+                <i class="bi bi-regex"></i>
+                Desencriptar
+            </button>
+            <button>
+                <i class="bi bi-braces-asterisk"></i>
+                Encriptar
+            </button>
+        </div>
+    </main>
+    <section class="content-a hide-content">
+        <div>
+            <img src="./img/no-message-img.svg" alt="No message image">
+            <i class="bi bi-exclamation-octagon-fill"></i>
+            <h2>Ningún mensaje fue encontrado</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+    </section>
+    <section class="content-b">
+        <div>
+            <h2>content B section</h2>
+            <div class="mensaje-encriptado-content">### #### #### #### ####</div>
+        </div>
+        <div class="copy-btn-content">
+            <button title="Copiar mensaje">
+                <i class="bi bi-floppy-fill"></i>
+                Copiar
+            </button>
+        </div>
+    </section>
+    <footer>
+        <small>&copy; Copyright - 2024 | Mauricio Cox</small>
+        <div class="social">
+            <a href="http://" target="_blank" rel="noopener noreferrer" title="Visitar perfil en GitHub">
+                <i class="bi bi-github"></i>
+            </a>
+            <a href="http://" target="_blank" rel="noopener noreferrer" title="Visitar perfil en Linkedin">
+                <i class="bi bi-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
