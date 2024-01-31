@@ -1,3 +1,138 @@
-.bi-exclamation-octagon-fill {
-    color: pink;
+:root {
+  --main-color: tomato;
+  --hover-color: rgb(172, 61, 41);
+  --title-color: #2a3b47;
+  --text-color: #485153;
+  --light-text-color: #a0a7ac;
+  --border-color: #eff3f5;
+  --container-color: #ffffff;
+  --body-color: whitesmoke;
+  --container-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  --pg: 1rem;
+  --font-family: system-ui;
+  accent-color: var(--main-color);
 }
+
+body.dark-theme {
+  --main-color: blue;
+  --title-color: #eff3f5;
+  --text-color: #c8cdd0;
+  --light-text-color: #a0a7ac;
+  --border-color: #2a3b47;
+  --container-color: #212e36;
+  --body-color: #192229;
+  --container-shadow: black;
+  accent-color: var(--main-color);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+}
+
+html {
+  font-size: 18px;
+  font-family: var(--font-family);
+}
+
+body {
+  background: var(--body-color);
+  color: var(--text-color);
+  height: 100dvh;
+  display: flex;
+  font-size: medium;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+select {
+  font-size: small;
+  margin: 0.5rem 0;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: x-large;
+
+  :hover {
+    color: var(--hover-color);
+  }
+}
+
+/* <HEADER  */
+header {
+  grid-area: header;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--pg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--container-shadow);
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  font-size: small;
+}
+
+nav button::before {
+  content: "\1F319";
+}
+
+.dark-theme nav button::before {
+  content: "\1F31E";
+}
+/* </HEADER  */
+
+/* <MAIN */
+main {
+  background-color: bisque;
+  grid-area: main;
+  padding: var(--pg);
+  width: 100dvw;
+}
+
+textarea {
+    width: 100%;
+    margin: 1.4rem auto;
+    resize: none;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem;
+    background-color: var(--container-color);
+}
+/* </MAIN */
