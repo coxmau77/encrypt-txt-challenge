@@ -14,6 +14,7 @@ let btnCopy = document.getElementById('btn_copy');
 let emptyMessage = document.querySelector('.empty-message');
 let displayMessage = document.querySelector('.display-message');
 let form = document.querySelector('form');
+let passCrypto = "Clave_cifrado_y_descifrado@123#";
 
 // <Darkmode
 if (selectedTheme) {
@@ -28,14 +29,14 @@ themeButton.addEventListener('click', () => {
 });
 // </Darkmode
 
-btnEncript.addEventListener("click", function (event) {
+btnEncript.addEventListener("click", function(event) {
     event.preventDefault();
     if (/[A-ZÁÉÍÓÚÜÑ]/.test(inputTxt.value) || /[^a-z\s]/i.test(inputTxt.value) || inputTxt.value == "") {
         alert('El texto NO debe contener Mayúsculas ni Carateres especiales\nni estar vacío, intentalo nuevamente')
         emptyMessage.classList.remove('hide-content');
         displayMessage.classList.add('hide-content');
     } else {
-        encryptedMessage.innerText = encriptMessage(inputTxt.value);
+        encryptedMessage.textContent = encriptMessage(inputTxt.value);
 
         emptyMessage.classList.add('hide-content');
         displayMessage.classList.remove('hide-content');
@@ -45,37 +46,27 @@ btnEncript.addEventListener("click", function (event) {
     form.reset();
 });
 
-btnDecript.addEventListener('click', function (event) {
+btnDecript.addEventListener('click', function(event){
     event.preventDefault();
-    console.log('click en desencriptar: ' + decryptText(inputTxt.value))
-    encryptedMessage.textContent = decryptText(inputTxt.value);
+    console.log('click en desencriptar: '+decryptText(encryptedMessage.textContent))
+    encryptedMessage.innerText = decryptText(encryptedMessage.textContent);
     form.reset()
 });
 
-btnCopy.addEventListener('click', function () {
+btnCopy.addEventListener('click', function() {
     copyTextContent();
 });
 
 // Función para encriptar texto con AES
 function encriptMessage(txt) {
-    let encrypt = txt
-        .replace(/e/g, "enter")
-        .replace(/i/g, "imes")
-        .replace(/a/g, "ai")
-        .replace(/o/g, "ober")
-        .replace(/u/g, "ufat");
-    return encrypt
+    let encrypted = CryptoJS.AES.encrypt(txt, passCrypto);
+    return encrypted.toString();
 }
 
 // Función para desencriptar texto con AES
 function decryptText(encryptedText) {
-    let decrypt = encryptedText
-        .replace(/enter/g, "e")
-        .replace(/imes/g, "i")
-        .replace(/ai/g, "a")
-        .replace(/ober/g, "o")
-        .replace(/ufat/g, "u");
-    return decrypt
+    var decrypted = CryptoJS.AES.decrypt(encryptedText, passCrypto).toString(CryptoJS.enc.Utf8);
+    return decrypted;
 }
 
 // Usar el API de Clipboard para copiar el texto

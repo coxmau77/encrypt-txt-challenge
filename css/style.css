@@ -62,11 +62,29 @@ button {
   font-family: inherit;
 }
 
-select {
-  font-size: small;
-  margin: 0.5rem 0;
+ul {
+  /* background-color: pink; */
+  /* font-size: small;
+  margin: 0.5rem 0; */
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  li {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      font-size: small;
+      color: var(--text-color);
+      padding: .2rem .4rem;
+    }
+  }
 }
 
+.active {
+  border-bottom: 2px solid var(--main-color);
+}
 
 a {
   color: var(--main-color);
