@@ -163,6 +163,8 @@ textarea {
   background-color: var(--container-color);
   box-shadow: var(--container-shadow);
   color: inherit;
+  text-wrap: balance;
+  field-sizing: content
 }
 
 .btn-group {
@@ -226,7 +228,6 @@ section > div {
   border-radius: 8px;
   margin: 1rem auto;
   overflow: hidden;
-  text-wrap: balance;
 }
 /* </SECTION */
 

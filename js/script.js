@@ -54,6 +54,7 @@ btnDecript.addEventListener('click', function(event){
 });
 
 btnCopy.addEventListener('click', function() {
+    
     copyTextContent();
 });
 
@@ -71,13 +72,9 @@ function decryptText(encryptedText) {
 
 // Usar el API de Clipboard para copiar el texto
 function copyTextContent() {
-    navigator.clipboard.writeText(encryptedMessage.innerText).then(function () {
-        console.log('Texto copiado al portapapeles');
+    navigator.clipboard.writeText(encryptedMessage.textContent).then(function () {
+        console.log(`Texto copiado (${encryptedMessage.textContent}) al porta papeles`);
     }).catch(function (err) {
         console.error('No se pudo copiar el texto al portapapeles', err);
     });
-}
-
-function clearInput() {
-    return inputTxt.value = '';
 }
