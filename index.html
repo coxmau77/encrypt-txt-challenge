@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="#" type="image/x-icon">
 </head>
 
-<!-- <body class="dark-theme"> -->
-<body>
+<body class="dark-theme">
+<!-- <body> -->
     <header>
         <div class="logo">
             <h1>txt</h1>
@@ -32,17 +32,17 @@
             <textarea wrap="off" id="input_txt" class="input-txt" placeholder="Ingresar texto" autofocus></textarea>
         </div>
         <div class="btn-group">
-            <button>
+            <button id="btn_decrypt">
                 <i class="bi bi-file-earmark-code"></i>
                 Desencriptar
             </button>
-            <button>
+            <button id="btn_encript">
                 <i class="bi bi-file-earmark-code-fill"></i>
                 Encriptar
             </button>
         </div>
     </main>
-    <section class="content-a hide-content">
+    <section class="empty-message">
         <div>
             <!-- <img src="./img/no-message-img.svg" alt="No message image"> -->
             <i class="bi bi-exclamation-octagon-fill"></i>
@@ -50,14 +50,14 @@
             <p>Ingresa el texto que desees encriptar o desencriptar.</p>
         </div>
     </section>
-    <section class="content-b">
+    <section class="display-message">
         <div>
             <div>
                 <h2>content B section</h2>
-                <div class="mensaje-encriptado-content">### #### #### #### ####</div>
+                <div id="encrypted_message" class="emcrypted-message">### #### #### #### ####</div>
             </div>
             <div class="copy-btn-content">
-                <button title="Copiar mensaje">
+                <button id="btn_copy" title="Copiar mensaje">
                     <i class="bi bi-floppy-fill"></i>
                     Copiar
                 </button>
