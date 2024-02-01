@@ -67,6 +67,7 @@ select {
   margin: 0.5rem 0;
 }
 
+
 a {
   color: var(--main-color);
   text-decoration: none;
@@ -164,7 +165,7 @@ textarea {
   box-shadow: var(--container-shadow);
   color: inherit;
   text-wrap: balance;
-  field-sizing: content
+  /* field-sizing: content; */
 }
 
 .btn-group {
@@ -239,8 +240,8 @@ footer {
   text-align: center;
   grid-area: footer;
   background-color: var(--container-color);
-  position: fixed;
-  bottom: 0px;
+  /* position: fixed; */
+  margin-bottom: 0px;
   width: 100%;
 }
 
