@@ -225,7 +225,7 @@ section > div {
 
 .emcrypted-message {
   background-color: var(--border-color);
-  color: var(--light-text-color);
+  color: inherit;
   padding: 1rem;
   border-radius: 8px;
   margin: 1rem auto;
