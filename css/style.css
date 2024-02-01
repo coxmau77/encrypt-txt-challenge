@@ -44,9 +44,6 @@ body {
   background: var(--body-color);
   color: var(--text-color);
   height: 100dvh;
-  display: flex;
-  font-size: medium;
-  flex-direction: column;
   margin-bottom: 6rem;
 }
 
@@ -132,6 +129,14 @@ header {
   font-size: small;
 }
 
+nav button{
+    background-color: transparent;
+    border: none;
+    &:hover {
+        background-color: var(--main-color);
+    }
+}
+
 nav button::before {
   content: "\1F319";
 }
@@ -146,7 +151,7 @@ main {
   /* background-color: bisque; */
   grid-area: main;
   padding: var(--pg);
-  width: 100dvw;
+  width: 100%;
 }
 
 textarea {
@@ -242,7 +247,50 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin: .5rem;
+    margin: 0.5rem;
   }
 }
 /* </FOOTER */
+
+/* <@MEDIA */
+@media (min-width: 700px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10% 1fr 20%;
+    grid-template-areas: "header header" "main section" "footer footer";
+  }
+}
+
+@media (min-width: 1000px) {
+  body,
+  html {
+    font-size: larger;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    grid-template-columns: 20% 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "header main section" "footer footer footer";
+  }
+
+  header {
+    flex-direction: column;
+    justify-content: start;
+    nav {
+      flex-direction: column;
+      margin: 1rem 0;
+    }
+  }
+
+}
+
+@media (min-width: 1600px) {
+    body,
+  html {
+    font-size: xx-large;
+  }
+}
+/* </@MEDIA */
