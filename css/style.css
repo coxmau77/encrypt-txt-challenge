@@ -201,18 +201,18 @@ section > div {
   display: grid;
   place-content: center;
   text-align: center;
+}
 
-  .bi-exclamation-octagon-fill {
-    color: white;
-    background-color: red;
-    width: fit-content;
-    margin: 0 auto;
-    border-radius: 100vw;
-    outline: 0.375rem solid rgba(255, 0, 0, 0.288);
-    padding: 0.4rem 0.7rem;
-    font-size: xx-large;
-    margin-bottom: 2rem;
-  }
+.bi-exclamation-octagon-fill {
+  color: white;
+  background-color: red;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 100vw;
+  outline: 0.375rem solid rgba(255, 0, 0, 0.288);
+  padding: 0.4rem 0.7rem;
+  font-size: xx-large;
+  margin-bottom: 2rem;
 }
 
 .display-message > div {
@@ -246,7 +246,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin: 0.5rem;
+    margin-top: 0.5rem;
   }
 }
 /* </FOOTER */
