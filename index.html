@@ -29,18 +29,20 @@
             <h2>Encypt txt challenge</h2>
             <p>Ingresa el texto que desees encriptar o desencriptar.</p>
             <p>Solo letras minúsculas, sin acentos, sin caracteres especiales y no puede estar vacío.</p>
-            <textarea wrap="off" id="input_txt" class="input-txt" placeholder="Ingresar texto" autofocus></textarea>
         </div>
-        <div class="btn-group">
-            <button id="btn_decrypt">
-                <i class="bi bi-file-earmark-code"></i>
-                Desencriptar
-            </button>
-            <button id="btn_encript">
-                <i class="bi bi-file-earmark-code-fill"></i>
-                Encriptar
-            </button>
-        </div>
+        <form>
+            <textarea id="input_txt" class="input-txt" placeholder="Ingresar texto" autofocus></textarea>
+            <div class="btn-group">
+                <button id="btn_decrypt">
+                    <i class="bi bi-file-earmark-code"></i>
+                    Desencriptar
+                </button>
+                <button id="btn_encript">
+                    <i class="bi bi-file-earmark-code-fill"></i>
+                    Encriptar
+                </button>
+            </div>
+        </form>
     </main>
     <section class="empty-message">
         <div>
@@ -50,11 +52,11 @@
             <p>Ingresa el texto que desees encriptar o desencriptar.</p>
         </div>
     </section>
-    <section class="display-message">
+    <section class="display-message hide-content">
         <div>
             <div>
                 <h2>content B section</h2>
-                <div id="encrypted_message" class="emcrypted-message">### #### #### #### ####</div>
+                <textarea id="encrypted_message" class="emcrypted-message" disabled>### #### #### #### ####</textarea>
             </div>
             <div class="copy-btn-content">
                 <button id="btn_copy" title="Copiar mensaje">
@@ -75,6 +77,7 @@
             </a>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script src="./js/script.js"></script>
 </body>
 

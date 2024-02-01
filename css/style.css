@@ -215,17 +215,18 @@ section > div {
   margin-bottom: 2rem; 
 }
 
-.display-message > div {  
-  .copy-btn-content {
-    display: flex;
-    justify-content: flex-end;
-  }
+.copy-btn-content {
+  display: flex;
+  justify-content: flex-end;
 }
+
 .emcrypted-message {
   background-color: var(--border-color);
   padding: 1rem;
   border-radius: 8px;
   margin: 1rem auto;
+  overflow: hidden;
+  text-wrap: balance;
 }
 /* </SECTION */
 
@@ -239,14 +240,14 @@ footer {
   position: fixed;
   bottom: 0px;
   width: 100%;
+}
 
-  .social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 /* </FOOTER */
 

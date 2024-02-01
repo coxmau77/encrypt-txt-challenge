@@ -13,6 +13,8 @@ let encryptedMessage = document.getElementById('encrypted_message');
 let btnCopy = document.getElementById('btn_copy');
 let emptyMessage = document.querySelector('.empty-message');
 let displayMessage = document.querySelector('.display-message');
+let form = document.querySelector('form');
+let passCrypto = "Clave_cifrado_y_descifrado@123#";
 
 // <Darkmode
 if (selectedTheme) {
@@ -26,3 +28,56 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme());
 });
 // </Darkmode
+
+btnEncript.addEventListener("click", function(event) {
+    event.preventDefault();
+    if (/[A-ZÁÉÍÓÚÜÑ]/.test(inputTxt.value) || /[^a-z\s]/i.test(inputTxt.value) || inputTxt.value == "") {
+        alert('El texto NO debe contener Mayúsculas ni Carateres especiales\nni estar vacío, intentalo nuevamente')
+        emptyMessage.classList.remove('hide-content');
+        displayMessage.classList.add('hide-content');
+    } else {
+        encryptedMessage.textContent = encriptMessage(inputTxt.value);
+
+        emptyMessage.classList.add('hide-content');
+        displayMessage.classList.remove('hide-content');
+        decryptText(encryptedMessage.textContent)
+    }
+
+    form.reset();
+});
+
+btnDecript.addEventListener('click', function(event){
+    event.preventDefault();
+    console.log('click en desencriptar +>++'+decryptText(encryptedMessage.textContent))
+    encryptedMessage.innerText = decryptText(encryptedMessage.textContent);
+    form.reset()
+});
+
+btnCopy.addEventListener('click', function() {
+    copyTextContent();
+});
+
+// Función para encriptar texto con AES
+function encriptMessage(txt) {
+    let encrypted = CryptoJS.AES.encrypt(txt, passCrypto);
+    return encrypted.toString();
+}
+
+// Función para desencriptar texto con AES
+function decryptText(encryptedText) {
+    var decrypted = CryptoJS.AES.decrypt(encryptedText, passCrypto).toString(CryptoJS.enc.Utf8);
+    return decrypted;
+}
+
+// Usar el API de Clipboard para copiar el texto
+function copyTextContent() {
+    navigator.clipboard.writeText(encryptedMessage.innerText).then(function () {
+        console.log('Texto copiado al portapapeles');
+    }).catch(function (err) {
+        console.error('No se pudo copiar el texto al portapapeles', err);
+    });
+}
+
+function clearInput() {
+    return inputTxt.value = '';
+}
