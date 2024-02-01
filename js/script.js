@@ -48,13 +48,12 @@ btnEncript.addEventListener("click", function(event) {
 
 btnDecript.addEventListener('click', function(event){
     event.preventDefault();
-    console.log('click en desencriptar +>++'+decryptText(encryptedMessage.textContent))
+    console.log('click en desencriptar: '+decryptText(encryptedMessage.textContent))
     encryptedMessage.innerText = decryptText(encryptedMessage.textContent);
     form.reset()
 });
 
 btnCopy.addEventListener('click', function() {
-    
     copyTextContent();
 });
 
